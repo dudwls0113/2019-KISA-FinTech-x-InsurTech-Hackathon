@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1040704943521",
+    "firebase_url": "https://insurtechhackathon.firebaseio.com",
+    "project_id": "insurtechhackathon",
+    "storage_bucket": "insurtechhackathon.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1040704943521:android:bc2641fe63fc9adde407e0",
+        "android_client_info": {
+          "package_name": "com.hackthon.kisainsur"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1040704943521-nqm8dvmbq2u8ejiiprhl8hklrin61jeo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hackthon.kisainsur",
+            "certificate_hash": "0539a298123ec30132071df52db6b33f1525184e"
+          }
+        },
+        {
+          "client_id": "1040704943521-jne8ucoeg7ei17vjjq49latv5h8cbub6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgajfJhZfvT9RWo7Cg8RMCbdKMRJrm8Ac"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1040704943521-jne8ucoeg7ei17vjjq49latv5h8cbub6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

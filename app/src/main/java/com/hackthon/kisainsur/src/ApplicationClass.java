@@ -25,6 +25,8 @@ public class ApplicationClass extends Application {
 
     public static SharedPreferences sSharedPreferences = null;
 
+    public static int channel_id=0;
+
     // SharedPreferences 키 값
     public static String TAG = "TEMPLATE_APP";
 
