@@ -1,6 +1,5 @@
 package com.hackthon.kisainsur.src;
 
-import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -17,6 +16,7 @@ import androidx.core.app.NotificationCompat;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 import com.hackthon.kisainsur.R;
+import com.hackthon.kisainsur.src.guest.GuestInfoActivity;
 import com.hackthon.kisainsur.src.main.MainActivity;
 
 import java.util.Random;
@@ -40,10 +40,14 @@ public class FireBaseMessagingService extends FirebaseMessagingService {
 
         if (remoteMessage != null && remoteMessage.getData().size() > 0) {
             Log.d("message", "Message Notification Body: " + remoteMessage.getData().get("message"));
-//            final boolean pushEvent = sSharedPreferences.getBoolean("pushEvent", true);
-//            if (pushEvent) {
-//            sendNotification(remoteMessage);
-            sendNotification(remoteMessage.getData().get("title"), remoteMessage.getData().get("message"), Integer.parseInt(remoteMessage.getData().get("travelNo")));
+
+            if(remoteMessage.getData().get("userNo") != null){
+                sendNotificationForAdmin(remoteMessage.getData().get("title"), remoteMessage.getData().get("message"));
+
+            }
+            else{
+                sendNotification(remoteMessage.getData().get("title"), remoteMessage.getData().get("message"), Integer.parseInt(remoteMessage.getData().get("travelNo")));
+            }
 //            }
         }
     }
@@ -95,14 +99,62 @@ public class FireBaseMessagingService extends FirebaseMessagingService {
 
 
     private void sendNotification(String messageTitle, String messageBody, int travelNo) {
+//
+//
+//        Intent intent = new Intent(this, GuestInfoActivity.class);
+//        TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
+//        stackBuilder.addParentStack(GuestInfoActivity.class);
+//        stackBuilder.addNextIntent(intent);
+////        intent.putExtra("pushFlag", true);
+//        intent.putExtra("travelNo", travelNo);
+//        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+////        PendingIntent pendingIntent = stackBuilder.getPendingIntent(channel_id, PendingIntent.FLAG_UPDATE_CURRENT);
+
+
+        Intent notificationIntent = new Intent(this, GuestInfoActivity.class);
+        notificationIntent.putExtra("travelNo", travelNo); //전달할 값
+        notificationIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK) ;
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent,  PendingIntent.FLAG_UPDATE_CURRENT);
+
+
+
+//        String channelId = getString(R.string.default_notification_channel_id);
+        String channelId = String.valueOf(new Random().nextInt(10000));
+
+        Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+
+        NotificationCompat.Builder notificationBuilder = null;
+        notificationBuilder = new NotificationCompat.Builder(this, channelId)
+                .setSmallIcon(R.drawable.btn_ok)
+                .setContentTitle(messageTitle)
+                .setContentText(messageBody)
+                .setStyle(new NotificationCompat.BigTextStyle()
+                        .bigText(messageBody))
+                .setSound(defaultSoundUri)
+                .setGroup("com.hackthon.kisainsur")
+                .setContentIntent(pendingIntent)
+                .setAutoCancel(true);
+
+        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            String channelName = "HACKATHON";
+            NotificationChannel channel = new NotificationChannel(channelId, channelName, NotificationManager.IMPORTANCE_HIGH);
+            notificationManager.createNotificationChannel(channel);
+        }
+
+        notificationManager.notify(new Random().nextInt(10000), notificationBuilder.build());
+
+    }
+
+
+    private void sendNotificationForAdmin(String messageTitle, String messageBody) {
 
 
         Intent intent = new Intent(this, MainActivity.class);
         TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
         stackBuilder.addParentStack(MainActivity.class);
         stackBuilder.addNextIntent(intent);
-//        intent.putExtra("pushFlag", true);
-        intent.putExtra("travelNo", travelNo);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingIntent = stackBuilder.getPendingIntent(channel_id, PendingIntent.FLAG_UPDATE_CURRENT);
 

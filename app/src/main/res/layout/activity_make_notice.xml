@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".src.MakeNoticeActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_bottom_border_grey"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="9dp"
+            android:src="@drawable/logo_top_blue" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="21dp"
+            android:layout_marginRight="21dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:layout_marginBottom="5dp"
+                android:text="일시"
+                android:textColor="@color/textGrey"
+                android:textSize="15sp" />
+
+            <View
+                android:id="@+id/dateEdit"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginBottom="19dp"
+                android:background="@drawable/bg_round_grey" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="장소"
+                android:textColor="@color/textGrey"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/locationEdit"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginBottom="19dp"
+                android:background="@drawable/bg_round_grey"
+                android:textColor="@color/textGrey"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="비용"
+                android:textColor="@color/textGrey"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/moneyEdit"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginBottom="19dp"
+                android:background="@drawable/bg_round_grey"
+                android:textColor="@color/textGrey"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="안내문구"
+                android:textColor="@color/textGrey"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/noticeEdit"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginBottom="19dp"
+                android:background="@drawable/bg_round_grey"
+                android:textColor="@color/textGrey"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/finishMakingNotice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_round_blue"
+                android:gravity="center_horizontal"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:text="안내문 제작 완료"
+                android:textColor="@color/blue"
+                android:layout_marginBottom="20dp"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

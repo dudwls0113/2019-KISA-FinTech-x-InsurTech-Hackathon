@@ -2,6 +2,7 @@ package com.hackthon.kisainsur.src;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,7 +11,7 @@ import com.hackthon.kisainsur.R;
 
 
 @SuppressLint("Registered")
-public class BaseActivity extends AppCompatActivity {
+public class BaseActivity extends AppCompatActivity implements  View.OnClickListener {
     public ProgressDialog mProgressDialog;
 
     public void showCustomToast(final String message) {
@@ -38,4 +39,10 @@ public class BaseActivity extends AppCompatActivity {
         super.onStop();
         hideProgressDialog();
     }
+
+    @Override
+    public void onClick(View view) {
+
+    }
+
 }
