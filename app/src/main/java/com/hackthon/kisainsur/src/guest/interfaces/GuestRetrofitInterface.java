@@ -20,6 +20,8 @@ public interface GuestRetrofitInterface {
     @GET("/pushTravel/1/1")
     Call<DefaultResponse> pushTravel();
 
+    @GET("/pushInputDone")
+    Call<DefaultResponse> pushInputDone();
 
     @POST("/travel")
     Call<DefaultResponse> postTravel(@Body RequestBody params);

@@ -151,9 +151,9 @@ public class FireBaseMessagingService extends FirebaseMessagingService {
     private void sendNotificationForAdmin(String messageTitle, String messageBody) {
 
 
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, PeopleListActivity.class);
         TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
-        stackBuilder.addParentStack(MainActivity.class);
+        stackBuilder.addParentStack(PeopleListActivity.class);
         stackBuilder.addNextIntent(intent);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingIntent = stackBuilder.getPendingIntent(channel_id, PendingIntent.FLAG_UPDATE_CURRENT);
