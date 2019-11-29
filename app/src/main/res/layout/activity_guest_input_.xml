@@ -73,6 +73,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/bg_round_white_opacity"
                     android:gravity="center_vertical"
+                    android:inputType="number"
                     android:paddingStart="10dp"
                     android:textColor="@color/textGrey"
                     android:textSize="15sp" />
@@ -93,6 +94,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/bg_round_white_opacity"
                     android:gravity="center_vertical"
+                    android:inputType="numberPassword"
                     android:paddingStart="10dp"
                     android:textColor="@color/textGrey"
                     android:textSize="15sp" />
