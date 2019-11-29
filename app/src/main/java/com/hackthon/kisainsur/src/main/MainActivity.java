@@ -18,7 +18,6 @@ public class MainActivity extends BaseActivity implements MainActivityView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mTvHelloWorld = findViewById(R.id.main_tv_hello_world);
     }
 
     private void tryGetTest() {
@@ -42,9 +41,7 @@ public class MainActivity extends BaseActivity implements MainActivityView {
 
     public void customOnClick(View view) {
         switch (view.getId()) {
-            case R.id.main_btn_hello_world:
-                tryGetTest();
-                break;
+
             default:
                 break;
         }
