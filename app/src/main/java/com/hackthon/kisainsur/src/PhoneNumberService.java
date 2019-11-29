@@ -1,12 +1,10 @@
-package com.hackthon.kisainsur.src.guest;
+package com.hackthon.kisainsur.src;
 
 import android.util.Log;
 
 import com.hackthon.kisainsur.src.guest.interfaces.GuestActivityView;
 import com.hackthon.kisainsur.src.guest.interfaces.GuestRetrofitInterface;
 import com.hackthon.kisainsur.src.guest.models.TravelResponse;
-import com.hackthon.kisainsur.src.main.interfaces.MainActivityView;
-import com.hackthon.kisainsur.src.main.interfaces.MainRetrofitInterface;
 import com.hackthon.kisainsur.src.main.models.DefaultResponse;
 
 import retrofit2.Call;
@@ -15,10 +13,10 @@ import retrofit2.Response;
 
 import static com.hackthon.kisainsur.src.ApplicationClass.getRetrofit;
 
-class GuestService {
+class PhoneNumberService {
     private final GuestActivityView mGuestActivityView;
 
-    GuestService(final GuestActivityView mGuestActivityView) {
+    PhoneNumberService(final GuestActivityView mGuestActivityView) {
         this.mGuestActivityView = mGuestActivityView;
     }
 

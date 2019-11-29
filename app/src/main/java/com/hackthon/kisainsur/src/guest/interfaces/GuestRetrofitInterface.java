@@ -13,16 +13,14 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface GuestRetrofitInterface {
-//    @GET("/test")
+    //    @GET("/test")
     @GET("/travel/{travelNo}")
     Call<TravelResponse> getTravel(@Path("travelNo") int travelNo);
 
-    @GET("/test/{number}")
-    Call<DefaultResponse> getTestPathAndQuery(
-            @Path("number") int number,
-            @Query("content") final String content
-    );
+    @GET("/pushTravel/1/1")
+    Call<DefaultResponse> pushTravel();
 
-    @POST("/test")
-    Call<DefaultResponse> postTest(@Body RequestBody params);
+
+    @POST("/travel")
+    Call<DefaultResponse> postTravel(@Body RequestBody params);
 }

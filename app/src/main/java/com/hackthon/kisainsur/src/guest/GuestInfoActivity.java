@@ -25,7 +25,6 @@ public class GuestInfoActivity extends BaseActivity implements GuestActivityView
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guest_info);
 
-
         mTextViewContent = findViewById(R.id.activity_guest_info_tv_content);
         mTextViewStartat = findViewById(R.id.activity_guest_info_tv_startAt);
         mTextViewLocation = findViewById(R.id.activity_guest_info_tv_location);
@@ -56,15 +55,14 @@ public class GuestInfoActivity extends BaseActivity implements GuestActivityView
         guestService.getTreval(travelNo);
     }
 
-
     @Override
     public void onClick(View view) {
         super.onClick(view);
         switch (view.getId()) {
             case R.id.activity_guest_info_ok:
-
+                Intent intent = new Intent(this, GuestInputActivity.class);
+                startActivity(intent);
                 break;
-
         }
     }
 
@@ -75,7 +73,7 @@ public class GuestInfoActivity extends BaseActivity implements GuestActivityView
         mTextViewContent.setText(travel.getContent());
         mTextViewStartat.setText(travel.getStartAt());
         mTextViewLocation.setText(travel.getLocation());
-        mTextViewPrice.setText(travel.getPrice()+"원");
+        mTextViewPrice.setText(travel.getPrice() + "원");
 
     }
 
