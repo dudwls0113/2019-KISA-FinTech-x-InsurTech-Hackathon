@@ -1,6 +1,7 @@
 package com.hackthon.kisainsur.src;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.DatePicker;
@@ -27,6 +28,11 @@ public class MakeNoticeActivity extends BaseActivity {
                     DatePickerDialog datePickerDialog = new DatePickerDialog(MakeNoticeActivity.this, listener, 2019, 11, 29);
                     datePickerDialog.show();
                 }
+                break;
+            case R.id.finishMakingNotice:
+                Intent intent = new Intent(MakeNoticeActivity.this, PhoneNumberActivity.class);
+                startActivity(intent);
+                break;
         }
     }
 

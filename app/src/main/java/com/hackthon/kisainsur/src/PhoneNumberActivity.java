@@ -27,16 +27,16 @@ public class PhoneNumberActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         mData = new ArrayList<>();
 
-        mData.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "3학년 1반", false));
-        mData.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "펭수", false));
-        mData.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "도리", false));
-        mData.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "문", false));
-        mData.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "소냐", false));
-        mData.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "소요", false));
-        mData.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "제리", false));
-        mData.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "3학년 2반", false));
+        mData.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "3학년 1반", false, null));
+        mData.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "펭수", false, "01022223333"));
+        mData.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "도리", false, "01011113333"));
+        mData.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "문", false, "01044445555"));
+        mData.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "소냐", false, "01099998888"));
+        mData.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "소요", false, "01055554444"));
+        mData.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "제리", false, "01089898111"));
+        mData.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "3학년 2반", false, null));
 
-        ExpandableListAdapter.Item places = new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "3학년 3반", false);
+        ExpandableListAdapter.Item places = new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "3학년 3반", false, null);
 
         mData.add(places);
 
@@ -49,7 +49,7 @@ public class PhoneNumberActivity extends AppCompatActivity {
             case R.id.giveNoticeBtn:
                 for (int i = 0;i<mData.size();i++){
                     if(mData.get(i).check){
-                        
+
                     }
                 }
                 Intent intent = new Intent(PhoneNumberActivity.this, MainActivity.class);

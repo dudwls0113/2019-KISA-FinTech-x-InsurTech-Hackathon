@@ -147,16 +147,18 @@ public class ExpandableListAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     public static class Item {
         public int type;
         public String text;
+        public String phone;
         public boolean check;
         public List<Item> invisibleChildren;
 
         public Item() {
         }
 
-        public Item(int type, String text, boolean check) {
+        public Item(int type, String text, boolean check, String phone) {
             this.type = type;
             this.text = text;
             this.check = check;
+            this.phone = phone;
         }
     }
 
