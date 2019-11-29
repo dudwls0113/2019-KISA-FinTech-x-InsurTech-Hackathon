@@ -48,7 +48,6 @@ public class PeopleListActivity extends AppCompatActivity {
             public void onResponse(Call<StudentResponse> call, Response<StudentResponse> response) {
                 final StudentResponse studentResponse = response.body();
                 if (studentResponse == null) {
-                    Log.d("결과", "ㅇ");
                     return;
                 }
 
@@ -60,7 +59,6 @@ public class PeopleListActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<StudentResponse> call, Throwable t) {
 
-                Log.d("결과", t+"");
             }
         });
     }
