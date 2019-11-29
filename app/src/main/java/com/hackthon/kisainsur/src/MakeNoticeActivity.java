@@ -2,8 +2,10 @@ package com.hackthon.kisainsur.src;
 
 import android.app.DatePickerDialog;
 import android.content.Context;
+
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -59,6 +61,7 @@ public class MakeNoticeActivity extends BaseActivity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+                break;
         }
     }
 
@@ -86,12 +89,16 @@ public class MakeNoticeActivity extends BaseActivity {
                 } else if (defaultResponse.getCode() == 100) {
                     Intent intent = new Intent(mContext, PhoneNumberActivity.class);
                     startActivity(intent);
+                    finish();
                 } else {
                 }
+                Log.d("에러", defaultResponse.getMessage());
+
             }
 
             @Override
             public void onFailure(Call<DefaultResponse> call, Throwable t) {
+                Log.d("에러", t.toString());
             }
         });
     }

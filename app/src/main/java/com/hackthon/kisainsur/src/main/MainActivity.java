@@ -14,6 +14,7 @@ import com.hackthon.kisainsur.R;
 import com.hackthon.kisainsur.src.BaseActivity;
 import com.hackthon.kisainsur.src.MakeNoticeActivity;
 import com.hackthon.kisainsur.src.phone_number.PhoneNumberActivity;
+import com.hackthon.kisainsur.src.PeopleListActivity;
 import com.hackthon.kisainsur.src.main.interfaces.MainActivityView;
 
 public class MainActivity extends BaseActivity implements MainActivityView {
@@ -47,7 +48,7 @@ public class MainActivity extends BaseActivity implements MainActivityView {
                 startActivity(intent);
                 break;
             case R.id.studentListBtn:
-                Intent intent1 = new Intent(MainActivity.this, PhoneNumberActivity.class);
+                Intent intent1 = new Intent(MainActivity.this, PeopleListActivity.class);
                 startActivity(intent1);
                 break;
         }

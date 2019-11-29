@@ -23,4 +23,5 @@ public class DefaultResponse {
     public boolean getIsSuccess() {
         return isSuccess;
     }
+
 }

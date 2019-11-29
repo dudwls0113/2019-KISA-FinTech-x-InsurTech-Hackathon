@@ -8,32 +8,38 @@
     android:paddingTop="5dp"
     android:paddingBottom="5dp">
 
+    <TextView
+        android:id="@+id/peopleListName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center_vertical"
+        android:text="문영진"
+        android:layout_marginLeft="26dp"
+        android:textColor="@color/textGrey"
+        android:textSize="15sp" />
+
     <ImageView
-        android:id="@+id/checkPeople"
+        android:id="@+id/checkInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="10dp"
-        android:paddingLeft="4dp"
+        android:paddingLeft="10dp"
         android:paddingTop="6dp"
-        android:paddingRight="4dp"
+        android:paddingRight="10dp"
         android:paddingBottom="6dp"
         app:srcCompat="@drawable/ic_unchecked" />
 
-    <TextView
-        android:id="@+id/peopleName"
+    <ImageView
+        android:id="@+id/checkMoney"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:text="문영진"
-        android:textColor="@color/textGrey"
-        android:textSize="15sp" />
-
-    <TextView
-        android:id="@+id/peoplePhone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginLeft="50dp"
-        android:text="01010101010" />
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="23dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="6dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="6dp"
+        app:srcCompat="@drawable/ic_unchecked" />
 </LinearLayout>

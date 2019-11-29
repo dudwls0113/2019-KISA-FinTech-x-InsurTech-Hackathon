@@ -107,6 +107,7 @@
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/bg_round_white"
                 android:gravity="center_horizontal"
+                android:onClick="onClick"
                 android:paddingTop="16dp"
                 android:paddingBottom="16dp"
                 android:text="전송하기"
