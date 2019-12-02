@@ -1,4 +1,4 @@
-package com.hackthon.kisainsur.src.phone_number.interfaces;
+package com.hackthon.kisainsur.src;
 
 public interface PhoneNumberInterface {
     void checkPeopleNumber();

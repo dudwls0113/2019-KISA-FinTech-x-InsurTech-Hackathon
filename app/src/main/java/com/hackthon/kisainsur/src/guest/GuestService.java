@@ -46,9 +46,9 @@ class GuestService {
         });
     }
 
-    void pushTravel() {
+    void pushInputDone() {
         final GuestRetrofitInterface guestRetrofitInterface = getRetrofit().create(GuestRetrofitInterface.class);
-        guestRetrofitInterface.pushTravel().enqueue(new Callback<DefaultResponse>() {
+        guestRetrofitInterface.pushInputDone().enqueue(new Callback<DefaultResponse>() {
             @Override
             public void onResponse(Call<DefaultResponse> call, Response<DefaultResponse> response) {
                 final DefaultResponse defaultResponse = response.body();
@@ -58,13 +58,13 @@ class GuestService {
                 } else if (defaultResponse.getCode() == 100) {
 //                    mGuestActivityView.getTravelSuccess(travelResponse.getTravelList());
                 }
-//                mGuestActivityView.validateFailure(defaultResponse.getMessage());
+                mGuestActivityView.validateFailure(defaultResponse.getMessage());
             }
 
             @Override
             public void onFailure(Call<DefaultResponse> call, Throwable t) {
 //                Log.d("에라", t.toString());
-//                mGuestActivityView.validateFailure(null);
+                mGuestActivityView.validateFailure(null);
             }
         });
     }

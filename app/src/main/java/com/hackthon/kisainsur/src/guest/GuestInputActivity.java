@@ -8,8 +8,10 @@ import android.view.View;
 
 import com.hackthon.kisainsur.R;
 import com.hackthon.kisainsur.src.BaseActivity;
+import com.hackthon.kisainsur.src.SplashActivity;
 import com.hackthon.kisainsur.src.guest.interfaces.GuestActivityView;
 import com.hackthon.kisainsur.src.guest.models.Travel;
+import com.hackthon.kisainsur.src.main.MainActivity;
 
 public class GuestInputActivity extends BaseActivity implements GuestActivityView {
 
@@ -22,7 +24,7 @@ public class GuestInputActivity extends BaseActivity implements GuestActivityVie
     void getTreval() {
         showProgressDialog();
         final GuestService guestService = new GuestService(this);
-        guestService.pushTravel();
+        guestService.pushInputDone();
     }
 
     @Override
@@ -37,11 +39,12 @@ public class GuestInputActivity extends BaseActivity implements GuestActivityVie
 
     @Override
     public void getTravelSuccess(Travel travel) {
-
     }
 
     @Override
     public void validateFailure(String message) {
-
+        hideProgressDialog();
+        Intent intent = new Intent(this, GuestThankActivity.class);
+        startActivity(intent);
     }
 }

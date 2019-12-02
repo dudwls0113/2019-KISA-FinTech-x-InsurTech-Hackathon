@@ -66,7 +66,7 @@ public class PhoneNumberActivity extends AppCompatActivity {
 
     void pushTravel() {
         final GuestRetrofitInterface guestRetrofitInterface = getRetrofit().create(GuestRetrofitInterface.class);
-        guestRetrofitInterface.pushInputDone().enqueue(new Callback<DefaultResponse>() {
+        guestRetrofitInterface.pushTravel().enqueue(new Callback<DefaultResponse>() {
             @Override
             public void onResponse(Call<DefaultResponse> call, Response<DefaultResponse> response) {
                 final DefaultResponse defaultResponse = response.body();
@@ -76,8 +76,9 @@ public class PhoneNumberActivity extends AppCompatActivity {
                 } else if (defaultResponse.getCode() == 100) {
 //                    Intent intent = new Intent(this, GuestThankActivity.class);
 //                    startActivity(intent);
-                    finish();
                 }
+                finish();
+
 //                mGuestActivityView.validateFailure(defaultResponse.getMessage());
             }
 
